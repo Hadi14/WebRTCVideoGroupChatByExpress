@@ -12,7 +12,7 @@ let localStream = null;
 let peers = {}
 
 // redirect if not https
-if(location.href.substr(0,5) !== 'https') 
+if (location.href.substr(0, 5) !== 'https')
     location.href = 'https' + location.href.substr(4, location.href.length - 4)
 
 
@@ -25,25 +25,25 @@ if(location.href.substr(0,5) !== 'https')
 const configuration = {
     // Using From https://www.metered.ca/tools/openrelay/
     "iceServers": [
-    {
-      urls: "stun:openrelay.metered.ca:80"
-    },
-    {
-      urls: "turn:openrelay.metered.ca:80",
-      username: "openrelayproject",
-      credential: "openrelayproject"
-    },
-    {
-      urls: "turn:openrelay.metered.ca:443",
-      username: "openrelayproject",
-      credential: "openrelayproject"
-    },
-    {
-      urls: "turn:openrelay.metered.ca:443?transport=tcp",
-      username: "openrelayproject",
-      credential: "openrelayproject"
-    }
-  ]
+        {
+            urls: "stun:openrelay.metered.ca:80"
+        },
+        {
+            urls: "turn:openrelay.metered.ca:80",
+            username: "openrelayproject",
+            credential: "openrelayproject"
+        },
+        {
+            urls: "turn:openrelay.metered.ca:443",
+            username: "openrelayproject",
+            credential: "openrelayproject"
+        },
+        {
+            urls: "turn:openrelay.metered.ca:443?transport=tcp",
+            username: "openrelayproject",
+            credential: "openrelayproject"
+        }
+    ]
 }
 
 /**
@@ -62,7 +62,19 @@ let constraints = {
 }
 
 /////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 
+async function startScreenShare() {
+    console.log("Screen Sharing button Clicked...");
+
+    stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+    localVideo.srcObject = stream;
+    localStream = stream;
+
+    init()
+
+}
+/////////////////////////////////////////////////////////
 constraints.video.facingMode = {
     ideal: "user"
 }
