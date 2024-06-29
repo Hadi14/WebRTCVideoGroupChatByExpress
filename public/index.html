@@ -35,12 +35,18 @@
 
         #videos {
             display: flex;
+            flex-wrap: wrap;
         }
 
         #screensharingDiv {
             width: 800px;
             height: 600px;
             background-color: #4CAF50;
+        }
+
+        .shvid {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -50,6 +56,7 @@
         <video id="localVideo" class="vid" autoplay muted></video>
     </div>
     <br>
+    <video id="ScreenShareDIV" class="shvid" autoplay muted></video>
     <!-- <div id="screensharingDiv">
 
     </div> -->
