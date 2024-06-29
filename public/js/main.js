@@ -80,15 +80,18 @@ constraints.video.facingMode = {
 }
 
 // enabling the camera at startup
-navigator.mediaDevices.getUserMedia(constraints).then(stream => {
-    console.log('Received local stream');
+function enableCamera() {
+    navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+        console.log('Received local stream');
 
-    localVideo.srcObject = stream;
-    localStream = stream;
+        localVideo.srcObject = stream;
+        localStream = stream;
 
-    init()
+        init()
 
-}).catch(e => alert(`getusermedia error ${e.name}`))
+    }).catch(e => alert(`getusermedia error ${e.name}`))
+}
+
 
 /**
  * initialize the socket connections
