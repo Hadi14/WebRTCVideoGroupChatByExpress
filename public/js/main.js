@@ -64,14 +64,15 @@ let constraints = {
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 
-async function startScreenShare() {
-    console.log("Screen Sharing button Clicked...");
-    stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
-    // localVideo.srcObject = stream;
-    ScreenShareDIV.srcObject = stream;
-    localStream = stream;
-    init()
-}
+// async function startScreenShare() {
+//     console.log("Screen Sharing button Clicked...");
+//     stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+//     // localVideo.srcObject = stream;
+//     ScreenShareDIV.srcObject = stream;
+//     localStream = stream;
+//     init()
+// }
+
 /////////////////////////////////////////////////////////
 constraints.video.facingMode = {
     ideal: "user"
