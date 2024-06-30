@@ -1,3 +1,4 @@
+
 /**
  * Socket.io socket
  */
@@ -94,7 +95,7 @@ function enableCamera() {
  * initialize the socket connections
  */
 function init() {
-    socket = io()
+    socket = io();
 
     socket.on('initReceive', socket_id => {
         console.log('INIT RECEIVE ' + socket_id)
@@ -124,7 +125,7 @@ function init() {
         peers[data.socket_id].signal(data.signal)
     })
 }
-
+init();
 /**
  * Remove a peer with given socket_id. 
  * Removes the video element and deletes the connection
