@@ -125,7 +125,6 @@ function init() {
         peers[data.socket_id].signal(data.signal)
     })
 }
-init();
 /**
  * Remove a peer with given socket_id. 
  * Removes the video element and deletes the connection
